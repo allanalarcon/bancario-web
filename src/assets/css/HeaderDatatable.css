@@ -1,0 +1,21 @@
+.Header-Datatable{
+    margin-left: 40px;
+	margin-right: 40px;
+    display: flex;
+}
+
+.Header-Datatable #search {
+    width: 80%;
+    height: 30px;
+}
+
+.Header-Datatable .add{
+    padding: 10px;
+    background-color: #ffdd00;
+    border: 0px;
+    color: #0f265c;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+@import "Base.css";

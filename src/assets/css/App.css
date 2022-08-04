@@ -1,0 +1,16 @@
+.App-logo {
+	height: 5vmin;
+	pointer-events: none;
+}
+
+.App-header {
+	padding: 25px;
+	display: flex;
+	border-bottom: 1px solid #ddd;
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+@import "Content.css";

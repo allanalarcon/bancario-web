@@ -1,0 +1,26 @@
+.Form {
+    margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.Form label {
+    color: #0f265c;
+}
+
+.Form input, .Form select {
+    width: 20%;
+    margin-bottom: 10px;
+    display: block;
+    box-sizing: border-box;
+}
+
+.Form button{
+    padding: 10px;
+    background-color: #ffdd00;
+    border: 0px;
+    color: #0f265c;
+    border-radius: 5px;
+    text-decoration: none;
+}

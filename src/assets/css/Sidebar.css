@@ -1,0 +1,27 @@
+.Sidebar {
+	width: 200px;
+	background-color: #ffffff;
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+	border-right: 1px solid #ddd;
+  }
+
+.Sidebar a {
+	display: block;
+	color: black;
+	padding: 15px;
+	text-decoration: none;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+   
+.Sidebar a.active {
+	background-color: #0F265C;
+	color: white;
+}
+  
+.Sidebar a:hover:not(.active) {
+	background-color: #72787a;
+	color: white;
+}

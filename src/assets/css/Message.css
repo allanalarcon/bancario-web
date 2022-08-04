@@ -1,0 +1,17 @@
+.bar {
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 20px;
+}
+
+.Success {
+	color: #2b7515;
+	background: #ecffd6;
+	border: 1px solid #617c42;
+}
+
+.Error {
+	color: #ba3939;
+	background: #ffe0e0;
+	border: 1px solid #a33a3a;
+}

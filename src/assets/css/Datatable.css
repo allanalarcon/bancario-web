@@ -1,0 +1,35 @@
+.Datatable {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+	border-collapse: collapse;
+	width: -webkit-fill-available;
+}
+
+.Datatable tr {
+	border: 1px solid #ddd;
+}
+
+.Datatable td, .Datatable th {
+	padding: 10px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.Datatable .edit{
+    background-color: #0f265c;
+}
+
+.Datatable .delete{
+    background-color: #d44e4e;
+}
+
+.Datatable .btn{
+	margin-left: 10px;
+    padding: 10px;
+    border: 0px;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+}

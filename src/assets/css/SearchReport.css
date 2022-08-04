@@ -1,0 +1,22 @@
+.SearchReport {
+    margin-left: 40px;
+	margin-right: 40px;
+    display: flex;
+}
+
+.SearchReport button{
+    padding: 10px;
+    background-color: #ffdd00;
+    border: 0px;
+    color: #0f265c;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.SearchReport select, input[type=date]{
+    width: 80%;
+    height: 34px;
+}
+
+@import "Base.css";
