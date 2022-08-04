@@ -6,6 +6,7 @@ import Account from "./pages/Account";
 import AccountNew from "./pages/AccountNew";
 import AccountEdit from "./pages/AccountEdit";
 import Transaction from "./pages/Transaction";
+import TransactionNew from "./pages/TransactionNew";
 import Report from "./pages/Report";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                     <Route path="cuentas/add" element={<AccountNew />} />
                     <Route path="cuentas/:id/edit" element={<AccountEdit />} />
                     <Route path="movimientos" element={<Transaction />} />
+                    <Route path="movimientos/add" element={<TransactionNew />} />
                     <Route path="reporte" element={<Report />} />
                 </Routes>
             </BrowserRouter>

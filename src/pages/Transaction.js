@@ -55,8 +55,8 @@ class Transaction extends Component{
                         {message && (
                         <Message type = {type} message = {message}/>
                         )}
-                        <SearchDatatable search={this.getTransactions} path="" placeholder="cliente"/>
-                        <Datatable headers = {headers} data = {data}/>
+                        <SearchDatatable search={this.getTransactions} path="/movimientos/add" placeholder="cliente"/>
+                        <Datatable headers = {headers} path="/movimientos/" data = {data}/>
                     </div>
                 </body>
             </div>
