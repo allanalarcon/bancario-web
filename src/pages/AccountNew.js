@@ -90,6 +90,17 @@ class AccountNew extends Component{
         });
     }
 
+    checkChange = async e=>{
+        e.persist();
+        this.setState({
+            form:{
+                ...this.state.form,
+                [e.target.name]: e.target.value,
+                active: e.target.checked
+            }
+        });
+    }
+
     componentDidMount(){
         this.getClients()
     };
@@ -130,7 +141,7 @@ class AccountNew extends Component{
                             <label for="amountInitial">Monto inicial: </label>
                             <input type="number" id="amountInitial" name="amountInitial" onChange={this.handleChange}/>
                             <label for="active">Activo</label>
-                            <input type="checkbox" id="active" name="active" value="true" onChange={this.handleChange}></input>
+                            <input type="checkbox" id="active" name="active" value="true" onChange={this.checkChange}></input>
                             <button onClick={() => this.postAccount()}>Guardar</button>
                         </div>
                     </div>

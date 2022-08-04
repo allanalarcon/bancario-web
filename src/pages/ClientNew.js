@@ -65,6 +65,17 @@ class ClientNew extends Component{
         });
     }
 
+    checkChange = async e=>{
+        e.persist();
+        this.setState({
+            form:{
+                ...this.state.form,
+                [e.target.name]: e.target.value,
+                active: e.target.checked
+            }
+        });
+    }
+
     render(){
         const { type, message, saved } = this.state;
         if (saved) {
@@ -100,7 +111,7 @@ class ClientNew extends Component{
                             <label for="password">Contraseña: </label>
                             <input type="password" id="password" name="password" onChange={this.handleChange}/>
                             <label for="active">Activo</label>
-                            <input type="checkbox" id="active" name="active" value="true" onChange={this.handleChange}></input>
+                            <input type="checkbox" id="active" name="active" value="true" onChange={this.checkChange}></input>
                             <button onClick={() => this.postClient()}>Guardar</button>
                         </div>
                     </div>
