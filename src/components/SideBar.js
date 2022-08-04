@@ -8,7 +8,7 @@ class Sidebar extends Component{
             <div className="Sidebar">
                 {sideBarData.map((element, index) => {
                     return (
-                        <a class={element.title === this.props.active ? "active" : ""} href={element.path}>{element.title}</a>
+                        <a key={element.title} className={element.title === this.props.active ? "active" : ""} href={element.path}>{element.title}</a>
                     )
                 })}
             </div>

@@ -9,13 +9,17 @@ class DatatableAccount extends Component{
                     <tr>
                         {this.props.headers.map((header)=>{
                             return (
-                                <th>{header}</th>
+                                <th key={header}>{header}</th>
                             );
                         })}
                     </tr>
                 </thead>
                 <tbody>
                     {this.props.data.map((account)=>{
+                        let actions;
+                        if (this.props.actions) {
+                            actions = <button className="btn delete" onClick={() => this.props.delete(account.id)}>Eliminar</button>
+                        }
                         return (
                             <tr key={account.id}>
                                 {Object.entries(account).map(([key,value])=>{
@@ -23,6 +27,7 @@ class DatatableAccount extends Component{
                                     if (key === "client") return <td>{value.name.toString()}</td>
                                     return <td>{value.toString()}</td>
                                 })}
+                                {actions}
                             </tr>
                         );
                     })}

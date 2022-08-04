@@ -3,14 +3,13 @@ import '../assets/css/Datatable.css';
 
 class Datatable extends Component{
     render(){
-        let action;
         return(
             <table className='Datatable'>
                 <thead>
                     <tr>
                         {this.props.headers.map((header)=>{
                             return (
-                                <th>{header}</th>
+                                <th key={header}>{header}</th>
                             );
                         })}
                     </tr>

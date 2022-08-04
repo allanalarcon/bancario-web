@@ -39,6 +39,32 @@ class Account extends Component{
         )))
     }
 
+    deleteAccount = (id) =>{
+        const request = {
+            method: 'DELETE',
+        };
+
+        fetch("http://localhost:8080/api/accounts/" + id, request)
+        .then(
+            (async data => {
+                if (data.ok){
+                    this.setState({
+                        message: "Cuenta eliminada",
+                        type: "Success"
+                    })
+                    this.getAccounts();
+                }
+                else {
+                    let response = await data.json()
+                    this.setState({
+                        message: response.errors,
+                        type: "Error"
+                    });
+                }
+            }
+        ))
+    }
+
     componentDidMount(){
         this.getAccounts()
     };
@@ -56,7 +82,7 @@ class Account extends Component{
                         <Message type = {type} message = {message}/>
                         )}
                         <HeaderDatatable search={this.getAccounts} path="" placeholder="número"/>
-                        <Datatable headers = {headers} data = {data}/>
+                        <Datatable headers = {headers} data = {data} delete = {this.deleteAccount} actions={true}/>
                     </div>
                 </body>
             </div>

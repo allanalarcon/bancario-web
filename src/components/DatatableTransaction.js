@@ -9,7 +9,7 @@ class DatatableTransaction extends Component{
                     <tr>
                         {this.props.headers.map((header)=>{
                             return (
-                                <th>{header}</th>
+                                <th key={header}>{header}</th>
                             );
                         })}
                     </tr>
