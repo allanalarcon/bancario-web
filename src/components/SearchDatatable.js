@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../assets/css/HeaderDatatable.css';
+import '../assets/css/SearchDatatable.css';
 
 class HeaderDatatable extends Component{
     render(){

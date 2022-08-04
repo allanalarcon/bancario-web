@@ -18,7 +18,10 @@ class DatatableAccount extends Component{
                     {this.props.data.map((account)=>{
                         let actions;
                         if (this.props.actions) {
-                            actions = <button className="btn delete" onClick={() => this.props.delete(account.id)}>Eliminar</button>
+                            actions = <React.Fragment>
+                                        <a href={this.props.path + account.id + "/edit"}><button className="btn edit">Editar</button></a>
+                                        <button className="btn delete" onClick={() => this.props.delete(account.id)}>Eliminar</button>
+                                    </React.Fragment>
                         }
                         return (
                             <tr key={account.id}>

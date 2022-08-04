@@ -21,8 +21,8 @@ class Report extends Component{
         };
     }
 
-    getClients = (name) => {
-        fetch(name == null ? "http://localhost:8080/api/clients" : "http://localhost:8080/api/clients?name=" + name)
+    getClients = () => {
+        fetch("http://localhost:8080/api/clients")
         .then(response => response.json().then(
             (data => {
                 if (response.ok){

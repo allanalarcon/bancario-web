@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Sidebar from '../components/SideBar';
 import Datatable from '../components/DatatableAccount';
 import Message from '../components/Message';
-import HeaderDatatable from '../components/HeaderDatatable';
+import SearchDatatable from '../components/SearchDatatable';
 
 const headers = ["Cliente", "Número", "Tipo", "Monto inicial", "Activo"]
 const pageName = "Cuentas"
@@ -81,8 +81,8 @@ class Account extends Component{
                         {message && (
                         <Message type = {type} message = {message}/>
                         )}
-                        <HeaderDatatable search={this.getAccounts} path="" placeholder="número"/>
-                        <Datatable headers = {headers} data = {data} delete = {this.deleteAccount} actions={true}/>
+                        <SearchDatatable search={this.getAccounts} path="/cuentas/add"  placeholder="número"/>
+                        <Datatable headers = {headers} data = {data} delete = {this.deleteAccount} path="/cuentas/" actions={true}/>
                     </div>
                 </body>
             </div>

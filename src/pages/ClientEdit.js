@@ -21,13 +21,15 @@ class ClientEdit extends Component{
             message: null,
             type: null,
             form: {
-                name: "",
                 dni: "",
+            },
+            postForm: {
+                name: "",
                 gender: "",
                 age: "",
                 address: "",
                 phone: "",
-                password: "",
+                active: "",
             }
         };
     }
@@ -39,13 +41,15 @@ class ClientEdit extends Component{
                 if (response.ok){
                     this.setState({
                         form:{
-                            name: data.name,
                             dni: data.dni,
+                        },
+                        postForm:{
+                            name: data.name,
                             gender: data.gender,
                             age: data.age,
                             address: data.address,
                             phone: data.phone,
-                            password: data.password
+                            active: data.active
                         }
                     });
                 }
@@ -63,7 +67,7 @@ class ClientEdit extends Component{
         const request = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(this.state.form)
+            body: JSON.stringify(this.state.postForm)
         };
 
         fetch("http://localhost:8080/api/clients/" + this.props.params.id, request)
@@ -88,9 +92,20 @@ class ClientEdit extends Component{
     handleChange = async e=>{
         e.persist();
         this.setState({
-            form:{
-                ...this.state.form,
-                [e.target.name]: e.target.value
+            postForm:{
+                ...this.state.postForm,
+                [e.target.name]: e.target.value,
+            }
+        });
+    }
+
+    checkChange = async e=>{
+        e.persist();
+        this.setState({
+            postForm:{
+                ...this.state.postForm,
+                [e.target.name]: e.target.value,
+                active: e.target.checked
             }
         });
     }
@@ -100,7 +115,7 @@ class ClientEdit extends Component{
     }
 
     render(){
-        const { type, message, form } = this.state;
+        const { type, message, form, postForm } = this.state;
         return(
             <div className="App">
                 <Header />
@@ -113,21 +128,23 @@ class ClientEdit extends Component{
                         )}
                         <div className="Form">
                             <label for="name">Nombre: </label>
-                            <input type="text" id="name" name="name" value={form.name} onChange={this.handleChange}/>
+                            <input type="text" id="name" name="name" value={postForm.name} onChange={this.handleChange}/>
                             <label for="dni">Identificación: </label>
                             <input type="text" id="dni" disabled value={form.dni}/>
                             <label for="gender">Género: </label>
-                            <select name="gender" id="gender" value={form.gender} onChange={this.handleChange}>
+                            <select name="gender" id="gender" value={postForm.gender} onChange={this.handleChange}>
                                 <option disabled selected value> -- seleccione -- </option>
                                 <option value="M">Masculino</option>
                                 <option value="F">Femenino</option>
                             </select>
                             <label for="age">Edad: </label>
-                            <input type="number" id="age" name="age" value={form.age} onChange={this.handleChange}/>
+                            <input type="number" id="age" name="age" value={postForm.age} onChange={this.handleChange}/>
                             <label for="address">Dirección: </label>
-                            <input type="text" id="address" name="address" value={form.address} onChange={this.handleChange}/>
+                            <input type="text" id="address" name="address" value={postForm.address} onChange={this.handleChange}/>
                             <label for="phone">Teléfono: </label>
-                            <input type="text" id="phone" name="phone" value={form.phone} onChange={this.handleChange}/>
+                            <input type="text" id="phone" name="phone" value={postForm.phone} onChange={this.handleChange}/>
+                            <label for="active">Activo</label>
+                            <input type="checkbox" id="active" name="active" value="true" onChange={this.checkChange} checked={postForm.active}></input>
                             <button onClick={() => this.updateClient()}>Guardar</button>
                         </div>
                     </div>

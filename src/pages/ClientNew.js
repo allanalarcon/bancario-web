@@ -25,6 +25,7 @@ class ClientNew extends Component{
                 address: "",
                 phone: "",
                 password: "",
+                active: "",
             }
         };
     }
@@ -98,6 +99,8 @@ class ClientNew extends Component{
                             <input type="text" id="phone" name="phone" onChange={this.handleChange}/>
                             <label for="password">Contraseña: </label>
                             <input type="password" id="password" name="password" onChange={this.handleChange}/>
+                            <label for="active">Activo</label>
+                            <input type="checkbox" id="active" name="active" value="true" onChange={this.handleChange}></input>
                             <button onClick={() => this.postClient()}>Guardar</button>
                         </div>
                     </div>

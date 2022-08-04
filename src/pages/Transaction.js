@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Sidebar from '../components/SideBar';
 import Datatable from '../components/DatatableTransaction';
 import Message from '../components/Message';
-import HeaderDatatable from '../components/HeaderDatatable';
+import SearchDatatable from '../components/SearchDatatable';
 
 const headers = ["Cliente", "Cuenta", "Fecha", "Tipo", "Monto", "Saldo"]
 const pageName = "Movimientos"
@@ -55,7 +55,7 @@ class Transaction extends Component{
                         {message && (
                         <Message type = {type} message = {message}/>
                         )}
-                        <HeaderDatatable search={this.getTransactions} path="" placeholder="cliente"/>
+                        <SearchDatatable search={this.getTransactions} path="" placeholder="cliente"/>
                         <Datatable headers = {headers} data = {data}/>
                     </div>
                 </body>
