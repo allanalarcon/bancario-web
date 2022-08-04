@@ -45,7 +45,7 @@ class Report extends Component{
             data: [],
         });
 
-        if (client == null || dateStart == null || dateEnd == null || dateStart == "" || dateEnd == ""){
+        if (client == null || dateStart == null || dateEnd == null || dateStart === "" || dateEnd === ""){
             this.setState({
                 message: "Elija cliente y fechas",
                 type: "Error",

@@ -30,7 +30,7 @@ class SearchReport extends Component{
                 <div className="col-3 right">
                     <div className="col-12">
                         <button onClick={() => this.props.search(client, dateStart, dateEnd)}>Buscar</button>
-                        <a target="_blank" href={"http://localhost:8080/api/clients/"+ client +"/report/pdf?dateTransactionStart=" + dateStart + "&dateTransactionEnd=" + dateEnd}><button className="btn edit">PDF</button></a>
+                        <a target="_blank" rel="noopener noreferrer" href={"http://localhost:8080/api/clients/"+ client +"/report/pdf?dateTransactionStart=" + dateStart + "&dateTransactionEnd=" + dateEnd}><button className="btn edit">PDF</button></a>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@ class Datatable extends Component{
                         if (this.props.actions) {
                             actions = <React.Fragment>
                                         <button className="btn delete" onClick={() => this.props.delete(element.id)}>Eliminar</button>
-                                        <a href={this.props.path + `${element.id}` + "/edit"}><button className="btn edit">Editar</button></a>
+                                        <a href={this.props.path + element.id + "/edit"}><button className="btn edit">Editar</button></a>
                                     </React.Fragment>
                         }
                         return (

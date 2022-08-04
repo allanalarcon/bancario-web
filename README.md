@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Build
+
+```bash
+docker build -t bancario-web .
+```
+
+## Run
+
+```bash
+docker run -p 3000:3000 bancario-web
+```
+
 ## Available Scripts
 
 In the project directory, you can run:

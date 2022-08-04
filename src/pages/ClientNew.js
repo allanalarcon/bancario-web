@@ -65,7 +65,7 @@ class ClientNew extends Component{
     }
 
     render(){
-        const { type, message, saved, form } = this.state;
+        const { type, message, saved } = this.state;
         if (saved) {
             return <Navigate to='/clientes'/>;
         }
