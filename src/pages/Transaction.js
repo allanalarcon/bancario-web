@@ -21,7 +21,7 @@ class Transaction extends Component{
     }
 
     getTransactions = (name) => {
-        fetch(name == null ? "http://localhost:8080/api/transactions" : "http://localhost:8080/api/transactions?name=" + name)
+        fetch(name == null ? `${process.env.REACT_APP_API}/api/transactions` : `${process.env.REACT_APP_API}/api/transactions?name=` + name)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){

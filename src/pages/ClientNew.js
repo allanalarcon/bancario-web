@@ -37,7 +37,7 @@ class ClientNew extends Component{
             body: JSON.stringify(this.state.form)
         };
 
-        fetch("http://localhost:8080/api/clients", request)
+        fetch(`${process.env.REACT_APP_API}/api/clients`, request)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){

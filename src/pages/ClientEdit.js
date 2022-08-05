@@ -35,7 +35,7 @@ class ClientEdit extends Component{
     }
 
     getClient=()=>{
-        fetch("http://localhost:8080/api/clients/" + this.props.params.id)
+        fetch(`${process.env.REACT_APP_API}/api/clients/` + this.props.params.id)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){
@@ -70,7 +70,7 @@ class ClientEdit extends Component{
             body: JSON.stringify(this.state.postForm)
         };
 
-        fetch("http://localhost:8080/api/clients/" + this.props.params.id, request)
+        fetch(`${process.env.REACT_APP_API}/api/clients/` + this.props.params.id, request)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){

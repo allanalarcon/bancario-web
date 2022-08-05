@@ -21,7 +21,7 @@ class Client extends Component{
     }
 
     getClients = (name) => {
-        fetch(name == null ? "http://localhost:8080/api/clients" : "http://localhost:8080/api/clients?name=" + name)
+        fetch(name == null ? `${process.env.REACT_APP_API}/api/clients` : `${process.env.REACT_APP_API}/api/clients?name=` + name)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){
@@ -44,7 +44,7 @@ class Client extends Component{
             method: 'DELETE',
         };
 
-        fetch("http://localhost:8080/api/clients/" + id, request)
+        fetch(`${process.env.REACT_APP_API}/api/clients/` + id, request)
         .then(
             (async data => {
                 if (data.ok){

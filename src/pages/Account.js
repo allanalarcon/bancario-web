@@ -21,7 +21,7 @@ class Account extends Component{
     }
 
     getAccounts = (number) => {
-        fetch(number == null ? "http://localhost:8080/api/accounts" : "http://localhost:8080/api/accounts?number=" + number)
+        fetch(number == null ? `${process.env.REACT_APP_API}/api/accounts` : `${process.env.REACT_APP_API}/api/accounts?number=` + number)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){
@@ -44,7 +44,7 @@ class Account extends Component{
             method: 'DELETE',
         };
 
-        fetch("http://localhost:8080/api/accounts/" + id, request)
+        fetch(`${process.env.REACT_APP_API}/api/accounts/` + id, request)
         .then(
             (async data => {
                 if (data.ok){

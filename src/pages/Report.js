@@ -22,7 +22,7 @@ class Report extends Component{
     }
 
     getClients = () => {
-        fetch("http://localhost:8080/api/clients")
+        fetch(`${process.env.REACT_APP_API}/api/clients`)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){
@@ -52,7 +52,7 @@ class Report extends Component{
             });
         }
         else{
-            fetch("http://localhost:8080/api/clients/"+ client +"/report?dateTransactionStart=" + dateStart + "&dateTransactionEnd=" + dateEnd)
+            fetch(`${process.env.REACT_APP_API}/api/clients/` + client + "/report?dateTransactionStart=" + dateStart + "&dateTransactionEnd=" + dateEnd)
             .then(response => response.json().then(
                 (data => {
                     if (response.ok){

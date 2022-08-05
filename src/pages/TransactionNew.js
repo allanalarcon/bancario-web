@@ -40,7 +40,7 @@ class TransactionNew extends Component{
                 body: JSON.stringify(this.state.form)
             };
     
-            fetch("http://localhost:8080/api/accounts/" + this.state.account + "/transactions", request)
+            fetch(`${process.env.REACT_APP_API}/api/accounts/` + this.state.account + "/transactions", request)
             .then(response => response.json().then(
                 (data => {
                     if (response.ok){
@@ -60,7 +60,7 @@ class TransactionNew extends Component{
     }
 
     getAccounts = () => {
-        fetch("http://localhost:8080/api/accounts")
+        fetch(`${process.env.REACT_APP_API}/api/accounts`)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){

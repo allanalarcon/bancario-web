@@ -34,7 +34,7 @@ class AccountEdit extends Component{
     }
 
     getAccount=()=>{
-        fetch("http://localhost:8080/api/accounts/" + this.props.params.id)
+        fetch(`${process.env.REACT_APP_API}/api/accounts/` + this.props.params.id)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){
@@ -67,7 +67,7 @@ class AccountEdit extends Component{
             body: JSON.stringify(this.state.postForm)
         };
         console.log(this.state.postForm)
-        fetch("http://localhost:8080/api/accounts/" + this.props.params.id, request)
+        fetch(`${process.env.REACT_APP_API}/api/accounts/` + this.props.params.id, request)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){
@@ -87,7 +87,7 @@ class AccountEdit extends Component{
     }
 
     getClients = () => {
-        fetch("http://localhost:8080/api/clients")
+        fetch(`${process.env.REACT_APP_API}/api/clients`)
         .then(response => response.json().then(
             (data => {
                 if (response.ok){

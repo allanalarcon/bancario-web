@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Build
 
 ```bash
-docker build -t bancario-web .
+docker build --build-arg API=http://localhost:8080 -t bancario-web .
 ```
 
 ## Run
